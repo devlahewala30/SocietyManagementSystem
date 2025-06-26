@@ -1,0 +1,33 @@
+﻿@model List<SocietyManagementSystem.Models.Complaint>
+
+@{
+    ViewData["Title"] = "My Complaints";
+}
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4">My Complaints</h2>
+
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Created On</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var complaint in Model)
+            {
+                <tr>
+                    <td>@complaint.Type</td>
+                    <td>@complaint.Description</td>
+                    <td>@complaint.Status</td>
+                    <td>@complaint.CreatedOn.ToString("dd-MM-yyyy")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary" href="/Complaint/Add">Add New Complaint</a>
+</div>

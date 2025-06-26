@@ -1,0 +1,27 @@
+﻿@model IEnumerable<SocietyManagementSystem.Models.Notice>
+@{
+    ViewData["Title"] = "All Notices";
+}
+
+<h2>All Notices</h2>
+<a href="/Notice/Add" class="btn btn-primary mb-3">Add Notice</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Posted On</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td>@item.Description</td>
+                <td>@item.PostedOn.ToString("dd-MM-yyyy HH:mm")</td>
+            </tr>
+        }
+    </tbody>
+</table>

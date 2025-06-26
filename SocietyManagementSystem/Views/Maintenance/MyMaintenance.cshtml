@@ -1,0 +1,51 @@
+﻿@model IEnumerable<SocietyManagementSystem.Models.Maintenance>
+@{
+    ViewData["Title"] = "My Maintenance";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="card shadow p-4">
+        <h2 class="text-center mb-4">🏷️ Your Maintenance Records</h2>
+
+        @if (Model != null && Model.Any())
+        {
+            <table class="table table-bordered text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Amount (₹)</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Amount</td>
+                            <td>@item.DueDate.ToString("dd-MM-yyyy")</td>
+                            <td>
+                                @if (item.IsPaid)
+                                {
+                                    <span class="badge bg-success">Paid</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-danger">Pending</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p class="text-center text-muted">No maintenance records found.</p>
+        }
+
+        <div class="text-center mt-3">
+            <a href="/User/Dashboard" class="btn btn-secondary">⬅ Back to Dashboard</a>
+        </div>
+    </div>
+</div>

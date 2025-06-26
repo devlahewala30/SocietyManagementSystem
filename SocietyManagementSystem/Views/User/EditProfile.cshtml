@@ -1,0 +1,35 @@
+﻿@model SocietyManagementSystem.Models.AppUser
+@{
+    ViewData["Title"] = "Edit Profile";
+}
+
+<div class="container container-box mt-5">
+    <h2 class="text-center mb-4">Edit Profile</h2>
+
+    <form asp-action="EditProfile" method="post">
+        <input type="hidden" asp-for="UserId" />
+
+        <div class="mb-3">
+            <label>Full Name</label>
+            <input asp-for="FullName" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label>Email</label>
+            <input asp-for="Email" type="email" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label>Password</label>
+            <input asp-for="Password" type="password" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label>Flat Number</label>
+            <input asp-for="FlatNo" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label>Contact Number</label>
+            <input asp-for="ContactNo" class="form-control" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Update</button>
+    </form>
+</div>

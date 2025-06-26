@@ -1,0 +1,29 @@
+﻿@model List<SocietyManagementSystem.Models.Message>
+
+@{
+    ViewData["Title"] = "Private Messages";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Sender ID</th>
+            <th>Receiver ID</th>
+            <th>message</th>
+            <th>Date & Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var msg in Model)
+        {
+            <tr>
+                <td>@msg.SenderId</td>
+                <td>@msg.ReceiverId</td>
+                <td>@msg.MessageText</td>
+                <td>@msg.SentOn.ToString("g")</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="text-center mb-4">
+        <h2 class="text-primary">Welcome, @ViewBag.FullName!</h2>
+        <p>Your Flat Number: <strong>@ViewBag.FlatNo</strong> | Contact: <strong>@ViewBag.ContactNo</strong></p>
+        <p>Email: <strong>@ViewBag.Email</strong></p>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Notices</h5>
+                    <p class="card-text">View all community notices and updates.</p>
+                    <a asp-controller="Notice" asp-action="Index" class="btn btn-primary w-100">View Notices</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Complaints</h5>
+                    <p class="card-text">Submit and manage your complaints.</p>
+                    <a asp-controller="Complaint" asp-action="MyComplaints" class="btn btn-warning w-100">My Complaints</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Maintenance</h5>
+                    <p class="card-text">Check your dues and payment status.</p>
+                    <a asp-controller="Maintenance" asp-action="MyMaintenance" class="btn btn-success w-100">View Maintenance</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Chat</h5>
+                    <p class="card-text">Chat privately with other residents.</p>
+                    <a asp-controller="Chat" asp-action="Index" class="btn btn-info w-100">Go to Chat</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Edit Profile</h5>
+                    <p class="card-text">Update your contact or flat details.</p>
+                    <a asp-controller="User" asp-action="EditProfile" class="btn btn-secondary w-100">Edit Profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
